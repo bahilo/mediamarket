@@ -1,0 +1,24 @@
+<?php if (!empty($errors)) { ?>
+    <?php foreach ($errors as $e) { ?>
+        <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i>&nbsp;<?php echo $e; ?></div>
+    <?php } ?>
+<?php } else { ?>
+<?php if ($payplug_popup == 0) { ?>
+    <p align="right">
+        <b>
+            <?php echo $text_bank_redirect; ?>
+        </b>
+    </p>
+    <div class="buttons">
+        <div class="pull-right">
+            <input type="button" class="btn btn-primary" value="<?php echo $button_confirm; ?>" class="button" onclick="location.href = '<?php echo $paymentUrl; ?>';"/>
+        </div>
+    </div>
+<?php } else { ?>
+    <script type="text/javascript" src="http://www.payplug.fr/static/button/scripts/payplug.js"></script>
+    <div class="buttons">
+        <div class="pull-right">
+            <input type="button" class="btn btn-primary" value="<?php echo $button_confirm; ?>" class="button" onclick="Payplug.showPayment('<?php echo $paymentUrl; ?>');"/>
+        </div>
+    </div>
+<?php }} ?>
