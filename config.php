@@ -5,7 +5,7 @@ define('HTTP_SERVER', 'http://localhost/mediamarket3/');
 // HTTPS
 define('HTTPS_SERVER', 'http://localhost/mediamarket3/');
 
-// DIR je suis
+// DIR
 //define('DIR_MODIFICATION', DIR_STORAGE . 'modification/'); 
 //define('DIR_SESSION', DIR_STORAGE . 'session/');
 define('DIR_STORAGE', 'D:/wamp2/www/mediamarket3/storage/');
