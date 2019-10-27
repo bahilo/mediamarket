@@ -7,7 +7,7 @@ define('HTTP_CATALOG', 'http://localhost/mediamarket3/');
 define('HTTPS_SERVER', 'http://localhost/mediamarket3/admin/');
 define('HTTPS_CATALOG', 'http://localhost/mediamarket3/');
 
-// DIR
+// DIR quoi
 define('DIR_APPLICATION', 'D:\wamp2\www\mediamarket3/admin/');
 define('DIR_SYSTEM', 'D:\wamp2\www\mediamarket3/system/');
 define('DIR_LANGUAGE', 'D:\wamp2\www\mediamarket3/admin/language/');
