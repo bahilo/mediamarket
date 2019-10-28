@@ -48,3 +48,55 @@
 2019-10-13 16:15:36 - PHP Notice:  Array to string conversion in D:\wamp2\www\mediamarket3\admin\controller\extension\payment\payplug.php on line 203
 2019-10-13 16:16:13 - PHP Notice:  Array to string conversion in D:\wamp2\www\mediamarket3\admin\controller\extension\payment\payplug.php on line 203
 2019-10-16 17:57:26 - PHP Warning:  unlink(D:/wamp2/www/mediamarket3/storage/cache/cache.catalog.language.1571252246): Permission denied in D:\wamp2\www\mediamarket3\system\library\cache\file.php on line 68
+2019-10-27 8:46:43 - PHP Warning:  Cannot modify header information - headers already sent by (output started at Z:\wamp\www\mediamarket4\admin\controller\common\login.php:90) in Z:\wamp\www\mediamarket4\system\library\response.php on line 36
+2019-10-27 9:47:00 - PHP Notice:  Undefined index: payment_payplug_email in Z:\wamp\www\mediamarket4\admin\controller\extension\payment\payplug.php on line 181
+2019-10-27 9:47:00 - PHP Notice:  Undefined index: payment_payplug_password in Z:\wamp\www\mediamarket4\admin\controller\extension\payment\payplug.php on line 185
+2019-10-27 9:47:00 - PHP Notice:  Undefined index: payment_payplug_sandbox in Z:\wamp\www\mediamarket4\admin\controller\extension\payment\payplug.php on line 193
+2019-10-27 9:47:00 - PHP Notice:  Undefined index: payment_payplug_email in Z:\wamp\www\mediamarket4\admin\controller\extension\payment\payplug.php on line 195
+2019-10-27 9:54:54 - PHP Notice:  Undefined index: payment_payplug_email in Z:\wamp\www\mediamarket4\admin\controller\extension\payment\payplug.php on line 181
+2019-10-27 9:54:54 - PHP Notice:  Undefined index: payment_payplug_password in Z:\wamp\www\mediamarket4\admin\controller\extension\payment\payplug.php on line 185
+2019-10-27 9:54:54 - PHP Notice:  Undefined index: payment_payplug_sandbox in Z:\wamp\www\mediamarket4\admin\controller\extension\payment\payplug.php on line 193
+2019-10-27 9:54:54 - PHP Notice:  Undefined index: payment_payplug_email in Z:\wamp\www\mediamarket4\admin\controller\extension\payment\payplug.php on line 195
+2019-10-27 10:29:48 - PHP Notice:  Undefined index: payment_payplug_email in Z:\wamp\www\mediamarket4\admin\controller\extension\payment\payplug.php on line 183
+2019-10-27 10:29:48 - PHP Notice:  Undefined index: payment_payplug_password in Z:\wamp\www\mediamarket4\admin\controller\extension\payment\payplug.php on line 187
+2019-10-27 10:29:48 - PHP Notice:  Undefined index: payment_payplug_sandbox in Z:\wamp\www\mediamarket4\admin\controller\extension\payment\payplug.php on line 195
+2019-10-27 10:29:48 - PHP Notice:  Undefined index: payment_payplug_email in Z:\wamp\www\mediamarket4\admin\controller\extension\payment\payplug.php on line 197
+2019-10-27 10:35:59 - PHP Notice:  Undefined index: payment_payplug_email in Z:\wamp\www\mediamarket4\admin\controller\extension\payment\payplug.php on line 183
+2019-10-27 10:35:59 - PHP Notice:  Undefined index: payment_payplug_password in Z:\wamp\www\mediamarket4\admin\controller\extension\payment\payplug.php on line 187
+2019-10-27 10:35:59 - PHP Notice:  Undefined index: payment_payplug_sandbox in Z:\wamp\www\mediamarket4\admin\controller\extension\payment\payplug.php on line 195
+2019-10-27 10:35:59 - PHP Notice:  Undefined index: payment_payplug_email in Z:\wamp\www\mediamarket4\admin\controller\extension\payment\payplug.php on line 197
+2019-10-27 10:42:08 - PHP Notice:  Undefined index: payplug_password in Z:\wamp\www\mediamarket4\admin\controller\extension\payment\payplug.php on line 197
+2019-10-27 10:44:37 - PHP Warning:  Invalid argument supplied for foreach() in Z:\wamp\www\mediamarket4\system\engine\loader.php on line 83
+2019-10-27 10:56:19 - PHP Warning:  Invalid argument supplied for foreach() in Z:\wamp\www\mediamarket4\system\engine\loader.php on line 83
+2019-10-27 11:03:50 - PHP Warning:  Invalid argument supplied for foreach() in Z:\wamp\www\mediamarket4\system\engine\loader.php on line 83
+2019-10-27 11:08:21 - PHP Warning:  Invalid argument supplied for foreach() in Z:\wamp\www\mediamarket4\system\engine\loader.php on line 83
+2019-10-27 11:12:20 - PHP Warning:  unlink(Z:/wamp/www/mediamarket4/storage/cache/cache.catalog.language.1572178340): Permission denied in Z:\wamp\www\mediamarket4\system\library\cache\file.php on line 68
+2019-10-27 11:14:31 - PHP Warning:  Invalid argument supplied for foreach() in Z:\wamp\www\mediamarket4\system\engine\loader.php on line 83
+2019-10-27 11:17:12 - PHP Warning:  Invalid argument supplied for foreach() in Z:\wamp\www\mediamarket4\system\engine\loader.php on line 83
+2019-10-27 11:17:37 - PHP Warning:  unlink(Z:/wamp/www/mediamarket4/storage/cache/cache.catalog.language.1572178657): Permission denied in Z:\wamp\www\mediamarket4\system\library\cache\file.php on line 68
+2019-10-27 11:26:12 - PHP Warning:  unlink(Z:/wamp/www/mediamarket4/storage/cache/cache.catalog.language.1572179172): Permission denied in Z:\wamp\www\mediamarket4\system\library\cache\file.php on line 68
+2019-10-27 13:16:06 - PHP Warning:  unlink(Z:/wamp/www/mediamarket4/storage/cache/cache.catalog.language.1572185766): Permission denied in Z:\wamp\www\mediamarket4\system\library\cache\file.php on line 68
+2019-10-27 13:23:19 - PHP Warning:  unlink(Z:/wamp/www/mediamarket4/storage/cache/cache.catalog.language.1572186199): Permission denied in Z:\wamp\www\mediamarket4\system\library\cache\file.php on line 68
+2019-10-27 13:45:22 - PHP Warning:  unlink(Z:/wamp/www/mediamarket4/storage/cache/cache.catalog.language.1572187522): Permission denied in Z:\wamp\www\mediamarket4\system\library\cache\file.php on line 68
+2019-10-27 16:33:47 - PHP Warning:  unlink(Z:/wamp/www/mediamarket4/storage/cache/cache.catalog.language.1572197627): Permission denied in Z:\wamp\www\mediamarket4\system\library\cache\file.php on line 68
+2019-10-27 16:33:55 - PHP Warning:  unlink(Z:/wamp/www/mediamarket4/storage/cache/cache.catalog.language.1572197635): Permission denied in Z:\wamp\www\mediamarket4\system\library\cache\file.php on line 68
+2019-10-27 16:34:10 - PHP Notice:  Undefined variable: customer_id in Z:\wamp\www\mediamarket4\catalog\controller\extension\payment\payplug.php on line 72
+2019-10-27 16:35:50 - PHP Notice:  Undefined index: email in Z:\wamp\www\mediamarket4\catalog\controller\extension\payment\payplug.php on line 68
+2019-10-27 16:35:50 - PHP Notice:  Undefined variable: customer_id in Z:\wamp\www\mediamarket4\catalog\controller\extension\payment\payplug.php on line 72
+2019-10-27 16:37:06 - PHP Notice:  Undefined index: email in Z:\wamp\www\mediamarket4\catalog\controller\extension\payment\payplug.php on line 68
+2019-10-27 16:37:06 - PHP Notice:  Undefined index: customer_id in Z:\wamp\www\mediamarket4\catalog\controller\extension\payment\payplug.php on line 72
+2019-10-27 16:38:25 - PHP Notice:  Undefined index: email in Z:\wamp\www\mediamarket4\catalog\controller\extension\payment\payplug.php on line 68
+2019-10-27 16:41:20 - PHP Warning:  unlink(Z:/wamp/www/mediamarket4/storage/cache/cache.catalog.language.1572198080): Permission denied in Z:\wamp\www\mediamarket4\system\library\cache\file.php on line 68
+2019-10-27 16:41:38 - PHP Notice:  Undefined index: iso_code_2 in Z:\wamp\www\mediamarket4\catalog\controller\extension\payment\payplug.php on line 50
+2019-10-27 16:41:38 - PHP Notice:  Undefined index: iso_code_2 in Z:\wamp\www\mediamarket4\catalog\controller\extension\payment\payplug.php on line 60
+2019-10-27 16:42:14 - PHP Notice:  Undefined index: iso_code_2 in Z:\wamp\www\mediamarket4\catalog\controller\extension\payment\payplug.php on line 50
+2019-10-27 16:42:14 - PHP Notice:  Undefined index: iso_code_2 in Z:\wamp\www\mediamarket4\catalog\controller\extension\payment\payplug.php on line 60
+2019-10-27 16:46:58 - PHP Warning:  unlink(Z:/wamp/www/mediamarket4/storage/cache/cache.catalog.language.1572198418): Permission denied in Z:\wamp\www\mediamarket4\system\library\cache\file.php on line 68
+2019-10-27 16:49:19 - PHP Warning:  unlink(Z:/wamp/www/mediamarket4/storage/cache/cache.catalog.language.1572198559): Permission denied in Z:\wamp\www\mediamarket4\system\library\cache\file.php on line 68
+2019-10-27 16:51:32 - PHP Warning:  unlink(Z:/wamp/www/mediamarket4/storage/cache/cache.catalog.language.1572198692): Permission denied in Z:\wamp\www\mediamarket4\system\library\cache\file.php on line 68
+2019-10-27 16:52:10 - PHP Warning:  unlink(Z:/wamp/www/mediamarket4/storage/cache/cache.catalog.language.1572198730): Permission denied in Z:\wamp\www\mediamarket4\system\library\cache\file.php on line 68
+2019-10-27 17:04:04 - PHP Warning:  unlink(Z:/wamp/www/mediamarket4/storage/cache/cache.catalog.language.1572199444): Permission denied in Z:\wamp\www\mediamarket4\system\library\cache\file.php on line 68
+2019-10-27 17:04:12 - PHP Warning:  unlink(Z:/wamp/www/mediamarket4/storage/cache/cache.catalog.language.1572199452): Permission denied in Z:\wamp\www\mediamarket4\system\library\cache\file.php on line 68
+2019-10-27 17:04:20 - PHP Warning:  unlink(Z:/wamp/www/mediamarket4/storage/cache/cache.catalog.language.1572199460): Permission denied in Z:\wamp\www\mediamarket4\system\library\cache\file.php on line 68
+2019-10-27 17:08:27 - PHP Warning:  unlink(Z:/wamp/www/mediamarket4/storage/cache/cache.catalog.language.1572199707): Permission denied in Z:\wamp\www\mediamarket4\system\library\cache\file.php on line 68
+2019-10-27 17:08:33 - PHP Warning:  unlink(Z:/wamp/www/mediamarket4/storage/cache/cache.catalog.language.1572199713): Permission denied in Z:\wamp\www\mediamarket4\system\library\cache\file.php on line 68

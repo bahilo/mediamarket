@@ -26,7 +26,7 @@
       <div class="panel-body">
         <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-payment" class="form-horizontal">
           <ul class="nav nav-tabs">
-			  <li class="active"><a href="#tab-general" data-toggle="tab"><?php echo $tab_general; ?></a></li>
+			  <li class="active"><a href="#tab-general" data-toggle="tab">{{ tab_general }}</a></li>
 			  <li><a href="#tab-status" data-toggle="tab">{{ tab_order_status }}</a></li>
 		  </ul>
 		  <div class="tab-content">
@@ -35,19 +35,19 @@
 				<div class="form-group required">
 					<label class="col-sm-2 control-label" for="entry-email">{{ entry_email }}</label>
 					<div class="col-sm-10">
-						<input type="text" name="payplug_email" value="{{ payplug_email }}" placeholder="{{ entry_email }}" id="entry-email" class="form-control"/>
+						<input type="text" name="payment_payplug_email" value="{{ payplug_email }}" placeholder="{{ entry_email }}" id="entry-email" class="form-control"/>
 					</div>
 				</div>
 				<div class="form-group required">
 					<label class="col-sm-2 control-label" for="entry-password">{{ entry_password }}</label>
 					<div class="col-sm-10">
-						<input type="text" name="payplug_password" value="{{ payplug_password }}" placeholder="{{ entry_password }}" id="entry-password" class="form-control"/>
+						<input type="text" name="payment_payplug_password" value="{{ payplug_password }}" placeholder="{{ entry_password }}" id="entry-password" class="form-control"/>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-2 control-label" for="input-sandbox"><span data-toggle="tooltip" title="{{ help_sandbox }}">{{ entry_sandbox }}</span></label>
 					<div class="col-sm-10">
-						<select name="payplug_sandbox" id="input-sandbox" class="form-control">
+						<select name="payment_payplug_sandbox" id="input-sandbox" class="form-control">
 						{% if payplug_sandbox %}
 							<option value="1" selected="selected">{{ text_yes }}</option>
 							<option value="0">{{ text_no }}</option>
@@ -59,9 +59,9 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-2 control-label" for="input-popup"><?php echo $entry_popup; ?></label>
+					<label class="col-sm-2 control-label" for="input-popup">{{ entry_popup }}</label>
 					<div class="col-sm-10">
-						<select name="payplug_popup" id="input-popup" class="form-control">
+						<select name="payment_payplug_popup" id="input-popup" class="form-control">
 						{% if payplug_popup %}
 							<option value="1" selected="selected">{{ text_enabled }}</option>
 							<option value="0">{{ text_disabled }}</option>
@@ -75,19 +75,19 @@
 				<div class="form-group">
 					<label class="col-sm-2 control-label" for="input-total"><span data-toggle="tooltip" title="{{ help_total }}">{{ entry_total }}</span></label>
 					<div class="col-sm-10">
-						<input type="text" name="payplug_total" value="{{ payplug_total }}" placeholder="{{ entry_total }}" id="input-total" class="form-control"/>
+						<input type="text" name="payment_payplug_total" value="{{ payplug_total }}" placeholder="{{ entry_total }}" id="input-total" class="form-control"/>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-2 control-label" for="input-sort-order">{{ entry_sort_order }}</label>
 					<div class="col-sm-10">
-						<input type="text" name="payplug_sort_order" value="{{ payplug_sort_order }}" placeholder="{{ entry_sort_order }}" id="input-sort-order" class="form-control"/>
+						<input type="text" name="payment_payplug_sort_order" value="{{ payplug_sort_order }}" placeholder="{{ entry_sort_order }}" id="input-sort-order" class="form-control"/>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-2 control-label" for="input-geo-zone">{{ entry_geo_zone }}</label>
 					<div class="col-sm-10">
-						<select name="payplug_geo_zone_id" id="input-geo-zone" class="form-control">
+						<select name="payment_payplug_geo_zone_id" id="input-geo-zone" class="form-control">
 							<option value="0">{{ text_all_zones }}</option>
 							{% for geo_zones in geo_zone %}
 								{% if geo_zone.geo_zone_id == payplug_geo_zone_id %}
@@ -102,7 +102,7 @@
 				<div class="form-group">
 					<label class="col-sm-2 control-label" for="input-status">{{ entry_status }}</label>
 					<div class="col-sm-10">
-						<select name="payplug_status" id="input-status" class="form-control">
+						<select name="payment_payplug_status" id="input-status" class="form-control">
 							{% if payplug_status %}
 							<option value="1" selected="selected">{{ text_enabled }}</option>
 							<option value="0">{{ text_disabled }}</option>
@@ -118,7 +118,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">{{ entry_paid_status }}</label>
                                 <div class="col-sm-10">
-                                    <select name="payplug_paid_status_id" class="form-control">
+                                    <select name="payment_payplug_paid_status_id" class="form-control">
 									{% for order_statuses in order_status %}
                                         {% if order_status.order_status_id == payplug_paid_status_id %}
                                         <option value="{{ order_status['order_status_id'] }}" selected="selected">{{ order_status['name'] }}</option>
@@ -132,7 +132,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">{{ entry_refunded_status }}</label>
                                 <div class="col-sm-10">
-                                    <select name="payplug_refunded_status_id" class="form-control">
+                                    <select name="payment_payplug_refunded_status_id" class="form-control">
 									{% for order_statuses in order_status %}
                                         {% if order_status.order_status_id == payplug_refunded_status_id %}
                                         <option value="{{ order_status.order_status_id }}" selected="selected">{{ order_status.name }}</option>

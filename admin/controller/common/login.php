@@ -83,11 +83,6 @@ class ControllerCommonLogin extends Controller {
 	}
 
 	protected function validate() {
-		//echo "user => " . print_r($this->user, true)."<br />";
-		echo "username => " . $this->request->post['username']."<br />";
-		echo "password => " . html_entity_decode($this->request->post['password'], ENT_QUOTES, 'UTF-8')."<br />";
-		echo "is logged => " . $this->user->login($this->request->post['username'], html_entity_decode($this->request->post['password'], ENT_QUOTES, 'UTF-8'))."<br />";
-		echo "registry => " .print_r( $this->registry, true)."<br />";
 		
 		if (!isset($this->request->post['username']) || !isset($this->request->post['password']) || !$this->user->login($this->request->post['username'], html_entity_decode($this->request->post['password'], ENT_QUOTES, 'UTF-8'))) {
 			$this->error['warning'] = $this->language->get('error_login');

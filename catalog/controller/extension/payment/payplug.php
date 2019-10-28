@@ -1,12 +1,12 @@
 <?php
 
-class ControllerPaymentPayplug extends Controller {
+class ControllerExtensionPaymentPayplug extends Controller {
 
     private $errors = array();
     private $PayPlug;
 
     public function index() {
-        $this->language->load('payment/payplug');
+        $this->language->load('extension/payment/payplug');
 		require DIR_SYSTEM.'library/payplug/init.php';
         // require DIR_SYSTEM.'library/payplug.inc.php';
         // $this->PayPlug = new PayPlug();
@@ -31,22 +31,43 @@ class ControllerPaymentPayplug extends Controller {
             $order_info = $this->model_checkout_order->getOrder($this->session->data['order_id']);
 
             $t = $this->currency->format($order_info['total'], $order_info['currency_code'], false, false);
-            $auth = json_decode(file_get_contents($authFile), true);
+            // $auth = json_decode(file_get_contents($authFile), true);
+            $auth = file_get_contents($authFile);
 
+            // echo "session ->".print_r($order_info, true)."<br />";
 			$payment = Payplug\Payment::create(array(
-				'amount'            => str_replace('.', '', $t),
-				'currency'          => $this->session->data['currency'],
-				'customer'          => array(
-					'email'             => $order_info['email'],
-					'first_name'        => html_entity_decode($order_info['payment_firstname'], ENT_QUOTES, 'UTF-8'),
-					'last_name'         => html_entity_decode($order_info['payment_lastname'], ENT_QUOTES, 'UTF-8')
-				),
+				'amount'           => $t * 100,
+				'currency'         => $this->session->data['currency'],
+				'billing'          => array(
+                    'email'        => $order_info['email'],
+                    'address1'     => $order_info['email'],
+                    'first_name'   => html_entity_decode($order_info['payment_firstname'], ENT_QUOTES, 'UTF-8'),
+                    'last_name'    => html_entity_decode($order_info['payment_lastname'], ENT_QUOTES, 'UTF-8'),
+                    'address1'     => $order_info['payment_address_1'],
+                    'postcode'     => $order_info['payment_postcode'],
+                    'city'         => $order_info['payment_city'],
+                    'country'      => $order_info['payment_iso_code_2'],
+                    //'language'     => $order_info['payment_iso_code_2']
+                ),
+                'shipping'  => array(
+                    'first_name'    => $order_info['shipping_firstname'],
+                    'last_name'     => $order_info['shipping_lastname'],
+                    'email'         => $order_info['email'],
+                    'address1'      => $order_info['shipping_address_1'],
+                    'postcode'      => $order_info['shipping_postcode'],
+                    'city'          => $order_info['shipping_city'],
+                    'country'       => $order_info['shipping_iso_code_2'],
+                    //'language'      => $order_info['shipping_iso_code_2'],
+                    'delivery_type' => 'BILLING'
+                  ),
 				'hosted_payment'    => array(
-					'return_url'        => $this->url->link('checkout/success'),
-					'cancel_url'        => $this->url->link('checkout/checkout', '', 'SSL')
+					'return_url'    => $this->url->link('checkout/success'),
+                    'cancel_url'    => $this->url->link('checkout/checkout', '', 'SSL')
 				),
-				'notification_url'      => ''
-			));
+                'metadata'          => array(
+                    'customer_id'   => $order_info['customer_id']
+                    )
+			), new Payplug\Payplug($auth));
 			
 			$data['paymentUrl'] = $payment->hosted_payment->payment_url;
 			
@@ -69,10 +90,10 @@ class ControllerPaymentPayplug extends Controller {
             $data['payplug_popup'] = $this->config->get('payplug_popup');
         }
 
-        if (file_exists(DIR_TEMPLATE.$this->config->get('config_template').'/template/payment/payplug.tpl')) {
-            return $this->load->view($this->config->get('config_template').'/template/payment/payplug.tpl', $data);
+        if (file_exists(DIR_TEMPLATE.$this->config->get('config_template').'/template/extension/payment/payplug')) {
+            return $this->load->view($this->config->get('config_template').'/template/extension/payment/payplug', $data);
         } else {
-            return $this->load->view('default/template/payment/payplug.tpl', $data);
+            return $this->load->view('default/template/extension/payment/payplug', $data);
         }
     }
 

@@ -11,12 +11,14 @@ class ControllerExtensionPaymentPayplug extends Controller {
         //require DIR_SYSTEM.'library/payplug.inc.php';
         //$this->PayPlug = new PayPlug();
 
+        echo "post =>".print_r($this->request->post, true)."<br />";
+
         $this->document->setTitle($this->language->get('heading_title'));
         $this->load->model('setting/setting');
 
         if (($this->request->server['REQUEST_METHOD'] == 'POST')) {
             if ($this->validate()) {
-                $this->model_setting_setting->editSetting('payplug', $this->request->post);
+                $this->model_setting_setting->editSetting('payment_payplug', $this->request->post);
                 $this->session->data['success'] = $this->language->get('text_success');
                 $this->response->redirect($this->url->link('marketplace/extension', 'user_token='.$this->session->data['user_token'].'&type=payment', 'SSL'));
             }
@@ -73,71 +75,71 @@ class ControllerExtensionPaymentPayplug extends Controller {
 
         $data['cancel'] = $this->url->link('extension/payment', 'user_token='.$this->session->data['user_token'], 'SSL');
 
-        if (isset($this->request->post['payplug_email'])) {
-            $data['payplug_email'] = $this->request->post['payplug_email'];
+        if (isset($this->request->post['payment_payplug_email'])) {
+            $data['payplug_email'] = $this->request->post['payment_payplug_email'];
         } else {
-            $data['payplug_email'] = $this->config->get('payplug_email');
+            $data['payplug_email'] = $this->config->get('payment_payplug_email');
         }
 
-        if (isset($this->request->post['payplug_password'])) {
-            $data['payplug_password'] = $this->request->post['payplug_password'];
+        if (isset($this->request->post['payment_payplug_password'])) {
+            $data['payplug_password'] = $this->request->post['payment_payplug_password'];
         } else {
-            $data['payplug_password'] = $this->config->get('payplug_password');
+            $data['payplug_password'] = $this->config->get('payment_payplug_password');
         }
 
-        if (isset($this->request->post['payplug_sandbox'])) {
-            $data['payplug_sandbox'] = $this->request->post['payplug_sandbox'];
+        if (isset($this->request->post['payment_payplug_sandbox'])) {
+            $data['payplug_sandbox'] = $this->request->post['payment_payplug_sandbox'];
         } else {
-            $data['payplug_sandbox'] = $this->config->get('payplug_sandbox');
+            $data['payplug_sandbox'] = $this->config->get('payment_payplug_sandbox');
         }
 
-        if (isset($this->request->post['payplug_popup'])) {
-            $data['payplug_popup'] = $this->request->post['payplug_popup'];
+        if (isset($this->request->post['payment_payplug_popup'])) {
+            $data['payplug_popup'] = $this->request->post['payment_payplug_popup'];
         } else {
-            $data['payplug_popup'] = $this->config->get('payplug_popup');
+            $data['payplug_popup'] = $this->config->get('payment_payplug_popup');
         }
 
-        if (isset($this->request->post['payplug_refunded_status_id'])) {
-            $data['payplug_refunded_status_id'] = $this->request->post['payplug_refunded_status_id'];
+        if (isset($this->request->post['payment_payplug_refunded_status_id'])) {
+            $data['payplug_refunded_status_id'] = $this->request->post['payment_payplug_refunded_status_id'];
         } else {
-            $data['payplug_refunded_status_id'] = $this->config->get('payplug_refunded_status_id');
+            $data['payplug_refunded_status_id'] = $this->config->get('payment_payplug_refunded_status_id');
         }
 
-        if (isset($this->request->post['payplug_paid_status_id'])) {
-            $data['payplug_paid_status_id'] = $this->request->post['payplug_paid_status_id'];
+        if (isset($this->request->post['payment_payplug_paid_status_id'])) {
+            $data['payplug_paid_status_id'] = $this->request->post['payment_payplug_paid_status_id'];
         } else {
-            $data['payplug_paid_status_id'] = $this->config->get('payplug_paid_status_id');
+            $data['payplug_paid_status_id'] = $this->config->get('payment_payplug_paid_status_id');
         }
 
         $this->load->model('localisation/order_status');
         $data['order_statuses'] = $this->model_localisation_order_status->getOrderStatuses();
 
-        if (isset($this->request->post['payplug_total'])) {
-            $data['payplug_total'] = $this->request->post['payplug_total'];
+        if (isset($this->request->post['payment_payplug_total'])) {
+            $data['payplug_total'] = $this->request->post['payment_payplug_total'];
         } else {
-            $data['payplug_total'] = $this->config->get('payplug_total');
+            $data['payplug_total'] = $this->config->get('payment_payplug_total');
         }
 
-        if (isset($this->request->post['payplug_sort_order'])) {
-            $data['payplug_sort_order'] = $this->request->post['payplug_sort_order'];
+        if (isset($this->request->post['payment_payplug_sort_order'])) {
+            $data['payplug_sort_order'] = $this->request->post['payment_payplug_sort_order'];
         } else {
-            $data['payplug_sort_order'] = $this->config->get('payplug_sort_order');
+            $data['payplug_sort_order'] = $this->config->get('payment_payplug_sort_order');
         }
 
-        if (isset($this->request->post['payplug_geo_zone_id'])) {
-            $data['payplug_geo_zone_id'] = $this->request->post['payplug_geo_zone_id'];
+        if (isset($this->request->post['payment_payplug_geo_zone_id'])) {
+            $data['payplug_geo_zone_id'] = $this->request->post['payment_payplug_geo_zone_id'];
         } else {
-            $data['payplug_geo_zone_id'] = $this->config->get('payplug_geo_zone_id');
+            $data['payplug_geo_zone_id'] = $this->config->get('payment_payplug_geo_zone_id');
         }
 
         $this->load->model('localisation/geo_zone');
 
         $data['geo_zones'] = $this->model_localisation_geo_zone->getGeoZones();
 
-        if (isset($this->request->post['payplug_status'])) {
-            $data['payplug_status'] = $this->request->post['payplug_status'];
+        if (isset($this->request->post['payment_payplug_status'])) {
+            $data['payplug_status'] = $this->request->post['payment_payplug_status'];
         } else {
-            $data['payplug_status'] = $this->config->get('payplug_status');
+            $data['payplug_status'] = $this->config->get('payment_payplug_status');
         }
 
         // if (!$this->PayPlug->init) {
@@ -153,7 +155,7 @@ class ControllerExtensionPaymentPayplug extends Controller {
         // Disable the module if an error was found
         if (!empty($data['errors'])) {
             $data['payplug_status'] = 0;
-            $this->model_setting_setting->editSetting('payplug', array('payplug_status' => 0));
+            $this->model_setting_setting->editSetting('payment_payplug', array('payment_payplug_status' => 0));
 
             $authFile = DIR_CONFIG.'payplug_auth.json';
             if (file_exists($authFile)) {
@@ -178,22 +180,22 @@ class ControllerExtensionPaymentPayplug extends Controller {
             $this->errors[] = $this->language->get('error_permission');
         }
 
-        if (!$this->request->post['payplug_email']) {
+        if (!$this->request->post['payment_payplug_email']) {
             $this->errors[] = $this->language->get('error_email');
         }
 
-        if (!$this->request->post['payplug_password']) {
+        if (!$this->request->post['payment_payplug_password']) {
             $this->errors[] = $this->language->get('error_password');
         }
 
-        if (empty($this->request->post['payplug_sort_order'])) {
+        if (empty($this->request->post['payment_payplug_sort_order'])) {
             $this->request->post['payplug_sort_order'] = 0;
         }
 
-        $sandbox = ($this->request->post['payplug_sandbox'] == '1' ? true : false);
+        $sandbox = ($this->request->post['payment_payplug_sandbox'] == '1' ? true : false);
 
-        $auth = Payplug\Authentication::getKeysByLogin($this->request->post['payplug_email'], $this->request->post['payplug_password']);
-		//$auth = $this->PayPlug->serverAuth($this->request->post['payplug_email'], $this->request->post['payplug_password'], $sandbox);
+        $auth = Payplug\Authentication::getKeysByLogin($this->request->post['payment_payplug_email'], $this->request->post['payment_payplug_password']);
+		//$auth = $this->PayPlug->serverAuth($this->request->post['payment_payplug_email'], $this->request->post['payment_payplug_password'], $sandbox);
 				
         if ($auth !== false) {
             $file = DIR_CONFIG.'payplug_auth.json';
